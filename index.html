@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción al Desayuno Empresarial</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <header class="text-center mb-4">
+            <img src="ruta/a/tu/logo.png" alt="Logo de la empresa" class="logo">
+        </header>
+
+        <h1 class="text-center mb-4">Desayuno Empresarial</h1>
+
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Detalles del evento</h5>
+                        <p><strong>Fecha:</strong> 15 de septiembre de 2024</p>
+                        <p><strong>Hora:</strong> 8:30 AM</p>
+                        <p><strong>Lugar:</strong> Hotel Gran Santiago, Salón Pacífico</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Formulario de inscripción</h5>
+                        <form id="inscripcionForm">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="apellido" class="form-label">Apellido</label>
+                                <input type="text" class="form-control" id="apellido" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="region" class="form-label">Región</label>
+                                <select class="form-select" id="region" required>
+                                    <option value="" selected disabled>Seleccione su región</option>
+                                    <option value="arica">Arica y Parinacota</option>
+                                    <option value="tarapaca">Tarapacá</option>
+                                    <option value="antofagasta">Antofagasta</option>
+                                    <option value="atacama">Atacama</option>
+                                    <option value="coquimbo">Coquimbo</option>
+                                    <option value="valparaiso">Valparaíso</option>
+                                    <option value="metropolitana">Metropolitana de Santiago</option>
+                                    <option value="ohiggins">O'Higgins</option>
+                                    <option value="maule">Maule</option>
+                                    <option value="nuble">Ñuble</option>
+                                    <option value="biobio">Biobío</option>
+                                    <option value="araucania">La Araucanía</option>
+                                    <option value="losrios">Los Ríos</option>
+                                    <option value="loslagos">Los Lagos</option>
+                                    <option value="aysen">Aysén</option>
+                                    <option value="magallanes">Magallanes</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Inscribirse</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de éxito -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">¡Inscripción Exitosa!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tu inscripción al Desayuno Empresarial ha sido registrada con éxito. ¡Gracias por participar!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('inscripcionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Aquí iría el código para enviar los datos del formulario al servidor
+            // Por ahora, solo mostraremos el modal de éxito
+            var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show();
+        });
+    </script>
+</body>
+</html>
